@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Senanayaka Cream</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'dark': '#111111',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-dark overflow-x-hidden selection:bg-gold selection:text-white">
+    <!-- WebGL Background -->
+    <canvas id="webgl-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-40"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-white/80 backdrop-blur-md border-b border-gray-100"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span
+                    class="text-2xl font-serif font-bold tracking-wider text-dark group-hover:text-gold transition-colors">SENANAYAKA</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-widest uppercase items-center">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="products.html" class="nav-link">Collection</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="products.html"
+                    class="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300 rounded-full">Shop
+                    Now</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-40 pb-20 relative px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 reveal-up">Our Heritage</h1>
+        <p class="text-gray-600 font-light max-w-2xl mx-auto text-lg reveal-up" style="transition-delay: 100ms;">The
+            story behind the world's most luxurious skincare brand. A legacy of purity, science, and nature combined.
+        </p>
+    </header>
+
+    <!-- Story Section -->
+    <section class="py-20 relative max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="reveal-up">
+                <img src="assets/splash.png" alt="Senanayaka Cream Process"
+                    class="rounded-3xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition duration-700">
+            </div>
+            <div class="space-y-6 reveal-up" style="transition-delay: 200ms;">
+                <span class="text-gold tracking-widest uppercase text-sm font-semibold">The Beginning</span>
+                <h2 class="text-4xl font-serif font-bold">Founded on Perfection</h2>
+                <p class="text-gray-600 font-light leading-relaxed text-lg">
+                    Senanayaka was born out of a desire for absolute perfection in skincare. Frustrated by compromise,
+                    our founders set out to create a cream that uses only the highest-grade organic extracts and
+                    state-of-the-art dermatological science.
+                </p>
+                <p class="text-gray-600 font-light leading-relaxed text-lg">
+                    We harvest rare botanicals when their potency is at its peak, blending them through a proprietary
+                    3-stage cold-press process that preserves their vital nutrients.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-24 pb-10 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-16">
+            <div class="md:col-span-2 space-y-6">
+                <span class="text-3xl font-serif font-bold text-white tracking-wider">SENANAYAKA</span>
+                <p class="text-gray-400 font-light max-w-sm leading-relaxed">
+                    Redefining luxury skincare with premium, organic ingredients scientifically formulated to bring out
+                    your natural, radiant glow.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-medium mb-6 tracking-widest uppercase">Explore</h4>
+                <ul class="space-y-4 text-gray-400 font-light">
+                    <li><a href="index.html" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gold transition-colors">About</a></li>
+                    <li><a href="products.html" class="hover:text-gold transition-colors">Collection</a></li>
+                    <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 font-light text-sm">
+            <p>&copy; 2026 Senanayaka Cream. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

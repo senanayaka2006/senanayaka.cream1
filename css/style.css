@@ -1,0 +1,109 @@
+/* Custom Styles for Senanayaka Cream */
+
+/* Custom Cursor */
+body {
+    cursor: none;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #D4AF37;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    mix-blend-mode: difference;
+}
+
+/* Hover effect on links for cursor */
+.cursor-hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(212, 175, 55, 0.2);
+    border-color: transparent;
+}
+
+/* Active Links */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* 3D Tilt Element */
+.tilt-element {
+    perspective: 1000px;
+}
+
+.hero-img {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Continuous Floating Animation */
+@keyframes floating {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+.floating {
+    animation: floating 6s ease-in-out infinite;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+    width: max-content;
+}
+
+/* Lenis smooth scrolling reset */
+html.lenis {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Utilities */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.hero-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.product-img-container {
+    mask-image: linear-gradient(to bottom, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
+}

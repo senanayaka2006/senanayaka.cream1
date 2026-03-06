@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senanayaka Cream | Premium Skincare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-light': '#F3E5AB',
+                        'cream': '#FFFDD0',
+                        'dark': '#111111',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-dark overflow-x-hidden selection:bg-gold selection:text-white">
+    <!-- WebGL Background -->
+    <canvas id="webgl-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-70"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-white/70 backdrop-blur-md border-b border-white/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <span class="text-2xl font-serif font-bold tracking-wider text-dark group-hover:text-gold transition-colors">SENANAYAKA</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-widest uppercase items-center">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Collection</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="products.html" class="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300 rounded-full">Shop Now</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl focus:outline-none" id="mobile-menu-btn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative flex items-center pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8 flex flex-col justify-center hero-content">
+                <div class="inline-block px-4 py-1 border border-gold/50 rounded-full backdrop-blur-sm bg-white/30 text-gold font-medium mb-4 tracking-widest text-xs uppercase hero-fade-in">
+                    The Essence of Beauty
+                </div>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight hero-title">
+                    Timeless <br><span class="text-gold italic font-light">Elegance</span> with Senanayaka
+                </h1>
+                <p class="text-lg text-gray-600 max-w-md font-sans font-light leading-relaxed hero-fade-in">
+                    Discover our revolutionary skin cream, meticulously crafted to rejuvenate and illuminate your natural beauty. Experience true luxury.
+                </p>
+                <div class="flex gap-6 items-center hero-fade-in">
+                    <a href="products.html" class="px-8 py-4 bg-dark text-white rounded-full font-medium tracking-wider hover:bg-gold transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-gold/30">
+                        Discover Collection
+                    </a>
+                    <a href="#video" class="flex items-center gap-3 text-dark font-medium hover:text-gold transition-colors group">
+                        <div class="w-12 h-12 rounded-full border border-dark group-hover:border-gold flex items-center justify-center">
+                            <svg class="w-4 h-4 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        Watch Film
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-[600px] flex justify-center items-center hero-image-container">
+                <!-- 3D Tilt Image Effect using GSAP & CSS -->
+                <div class="relative w-full max-w-md tilt-element will-change-transform">
+                    <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 mix-blend-multiply"></div>
+                    <img src="assets/hero.png" alt="Senanayaka Cream Luxury Jar" class="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl hero-img transform transition-transform duration-700 hover:scale-105">
+                    
+                    <!-- Decorative Elements -->
+                    <div class="absolute top-10 -right-10 w-32 h-32 bg-white/80 backdrop-blur-md rounded-full shadow-xl flex items-center justify-center z-20 floating">
+                        <div class="text-center">
+                            <span class="block text-xl font-serif font-bold text-gold">100%</span>
+                            <span class="block text-xs font-sans tracking-widest uppercase">Organic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section with Marquee -->
+    <section class="py-24 bg-white relative z-10">
+        <div class="overflow-hidden whitespace-nowrap border-y border-gray-100 py-6 mb-24 flex items-center bg-gray-50/50">
+            <div class="animate-marquee flex gap-16 items-center text-4xl font-serif font-light text-gray-300">
+                <span>HYDRATING</span> <span class="text-gold">✦</span>
+                <span>ANTI-AGING</span> <span class="text-gold">✦</span>
+                <span>ORGANIC</span> <span class="text-gold">✦</span>
+                <span>PREMIUM</span> <span class="text-gold">✦</span>
+                <span>HYDRATING</span> <span class="text-gold">✦</span>
+                <span>ANTI-AGING</span> <span class="text-gold">✦</span>
+                <span>ORGANIC</span> <span class="text-gold">✦</span>
+                <span>PREMIUM</span> <span class="text-gold">✦</span>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20 reveal-up">
+                <span class="text-gold tracking-widest uppercase text-sm font-semibold mb-2 block">Why Choose Us</span>
+                <h2 class="text-4xl font-serif font-bold">The Science of Perfect Skin</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center p-8 rounded-3xl hover:bg-gray-50 transition-colors duration-500 reveal-up" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 mx-auto bg-gold-light/30 rounded-full flex items-center justify-center mb-6 text-gold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold mb-4">Radiant Glow</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Our special formula ensures a radiant and youthful glow that lasts all day, every day.</p>
+                </div>
+                <div class="text-center p-8 rounded-3xl hover:bg-gray-50 transition-colors duration-500 reveal-up" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 mx-auto bg-gold-light/30 rounded-full flex items-center justify-center mb-6 text-gold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold mb-4">Organic Ingredients</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Sourced from the finest natural ingredients worldwide, ensuring purity and effectiveness.</p>
+                </div>
+                <div class="text-center p-8 rounded-3xl hover:bg-gray-50 transition-colors duration-500 reveal-up" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 mx-auto bg-gold-light/30 rounded-full flex items-center justify-center mb-6 text-gold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold mb-4">Fast Absorption</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">A lightweight texture that penetrates deeply into the skin without leaving greasy residues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Image Section -->
+    <section class="h-[80vh] relative flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 scale-110" id="parallax-bg">
+            <img src="assets/splash.png" alt="Cream Texture" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-dark/40"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-6">
+            <h2 class="text-5xl md:text-7xl font-serif font-bold mb-6">Purity in Every Drop</h2>
+            <p class="text-xl max-w-2xl mx-auto font-light mb-10 text-gray-200">Experience the transformation. The ultimate nourishment your skin deserves.</p>
+            <a href="about.html" class="inline-block px-10 py-4 border border-white text-white hover:bg-white hover:text-dark transition-all duration-300 rounded-full font-medium tracking-wider uppercase">Our Story</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-24 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-16">
+            <div class="md:col-span-2 space-y-6">
+                <span class="text-3xl font-serif font-bold text-white tracking-wider">SENANAYAKA</span>
+                <p class="text-gray-400 font-light max-w-sm leading-relaxed">
+                    Redefining luxury skincare with premium, organic ingredients scientifically formulated to bring out your natural, radiant glow.
+                </p>
+                <div class="flex gap-4">
+                    <!-- Social Icons -->
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-gold hover:text-gold transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-gold hover:text-gold transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-medium mb-6 tracking-widest uppercase">Explore</h4>
+                <ul class="space-y-4 text-gray-400 font-light">
+                    <li><a href="index.html" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gold transition-colors">About</a></li>
+                    <li><a href="products.html" class="hover:text-gold transition-colors">Collection</a></li>
+                    <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-medium mb-6 tracking-widest uppercase">Legal</h4>
+                <ul class="space-y-4 text-gray-400 font-light">
+                    <li><a href="#" class="hover:text-gold transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Shipping Info</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Returns</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 font-light text-sm">
+            <p>&copy; 2026 Senanayaka Cream. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+    <!-- Three.js for 3D webgl background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
